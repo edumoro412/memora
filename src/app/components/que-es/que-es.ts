@@ -1,4 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-que-es',
@@ -8,18 +10,43 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class QueEs implements AfterViewInit {
   ngAfterViewInit(): void {
-    // entrada del vídeo (izquierda)
-    gsap.fromTo(
-      '.memora__action',
-      { x: -80, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1.2, ease: 'power3.out' },
-    );
+    gsap.registerPlugin(ScrollTrigger);
 
-    // entrada del texto (derecha)
-    gsap.fromTo(
-      '.memora__content',
-      { x: 80, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1.2, delay: 0.2, ease: 'power3.out' },
-    );
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+
+      gsap.fromTo(
+        '.memora__action',
+        { x: -80, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.memora',
+            start: 'top 50%',
+            once: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        '.memora__content',
+        { x: 80, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.2,
+          delay: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.memora',
+            start: 'top 50%',
+            once: true,
+          },
+        },
+      );
+    }, 200);
   }
 }
