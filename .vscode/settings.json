@@ -1,0 +1,14 @@
+{
+  "conventionalCommits.scopes": [
+    "settings",
+    "notes",
+    "public",
+    "styles",
+    "routes",
+    "layout",
+    "home",
+    "quees",
+    "service",
+    "configuration"
+  ]
+}
