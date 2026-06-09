@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap");
+
+:root {
+  /* Header */
+  --color-header: #3185fc;
+
+  /* Fondos */
+  --color-bg-body: #0f1923;
+  --color-bg-card: #1a2535;
+  --color-bg-card-alt: #212f42;
+
+  /* Textos */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0aec0;
+  --color-text-muted: #5a7080;
+
+  /* Botones y acentos */
+  --color-btn-primary: #347adc;
+  --color-btn-primary-hover: #5499fd;
+  --color-btn-outline: transparent;
+  --color-btn-outline-border: #3185fc;
+
+  /* Bordes */
+  --color-border: #1e3a5f;
+  --color-border-hover: #3185fc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", serif;
+}
+
+body {
+  /*   background-color: var(--color-bg-body);
+ */
+  color: var(--color-text-primary);
+}
